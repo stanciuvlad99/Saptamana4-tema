@@ -6,7 +6,9 @@ public class WebTabTable {
 
     public static void main(String[] args) {
         ChromeDriver driver = ChromeDriverAndPage();
-        basicWebPageExample(driver);
+//        basicWebPageExample(driver);
+        elementAttributesExamples(driver);
+        driver.quit();
 
     }
 
@@ -25,4 +27,45 @@ public class WebTabTable {
         WebElement text1 = driver.findElement(By.id("para2"));
         System.out.println(text1.getText());
     }
+
+    public static void elementAttributesExamples(ChromeDriver driver){
+        WebElement elementAttributesExamples = driver.findElement(By.id("elementattributestest"));
+        elementAttributesExamples.click();
+        WebElement button = driver.findElement(By.cssSelector(".styled-click-button"));
+        button.click();
+        WebElement paragraph = driver.findElement(By.id("jsattributes"));
+        System.out.println(paragraph.getAttribute("nextid"));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
