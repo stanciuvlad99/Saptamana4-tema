@@ -7,8 +7,9 @@ public class WebTabTable {
     public static void main(String[] args) {
         ChromeDriver driver = ChromeDriverAndPage();
 //        basicWebPageExample(driver);
-        elementAttributesExamples(driver);
-        driver.quit();
+//        elementAttributesExamples(driver);
+        findByPlayground(driver);
+//        driver.quit();
 
     }
 
@@ -37,7 +38,18 @@ public class WebTabTable {
         System.out.println(paragraph.getAttribute("nextid"));
     }
 
+    public static void findByPlayground (ChromeDriver driver){
+        WebElement findByPlayground = driver.findElement(By.id("findbytest"));
+        findByPlayground.click();
+        WebElement first = driver.findElement(By.id("p1"));
+        System.out.println(first.getText());
+        WebElement second = driver.findElement(By.cssSelector(".normal"));
+        System.out.println(second.getText());
+        WebElement third = driver.findElement(By.name("pName1"));
+        System.out.println(third.getText());
 
+
+    }
 
 
 
