@@ -2,14 +2,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
 public class WebTabTable {
 
     public static void main(String[] args) {
         ChromeDriver driver = ChromeDriverAndPage();
 //        basicWebPageExample(driver);
 //        elementAttributesExamples(driver);
-        findByPlayground(driver);
-//        driver.quit();
+//        findByPlayground(driver);
+        tableTestPage(driver);
+        driver.quit();
 
     }
 
@@ -51,6 +54,20 @@ public class WebTabTable {
 
     }
 
+    public static void tableTestPage (ChromeDriver driver){
+        WebElement tableTestPage = driver.findElement(By.id("tablestest"));
+        tableTestPage.click();
+       List<WebElement> tableRows = driver.findElements(By.cssSelector("table#mytable tr"));
+       WebElement firstRow = tableRows.get(0);
+       List<WebElement> firstRowColumn = firstRow.findElements(By.cssSelector("th"));
+       System.out.println("Header din prima coloana: " + firstRowColumn.get(0).getText());
+       System.out.println("Header din prima coloana: " + firstRowColumn.get(1).getText());
+
+
+
+
+
+    }
 
 
 
