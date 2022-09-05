@@ -12,7 +12,6 @@ import java.util.List;
 
 public class WebTabTable extends BaseTest{
 
-
     @Test
     public static void basicWebPageExample(){
         WebElement basicWebPageExample = driver.findElement(By.id("basicpagetest"));

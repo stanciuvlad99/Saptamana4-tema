@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 
 public class BaseTest {
 
+
     protected static RemoteWebDriver driver = null;
 
     @BeforeMethod

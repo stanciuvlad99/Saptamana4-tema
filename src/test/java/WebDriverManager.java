@@ -12,6 +12,7 @@ public class WebDriverManager {
 //        return new ChromeDriver();
 
 //    }
+
     public static RemoteWebDriver getRemoteWebDriver() throws MalformedURLException {
         return new RemoteWebDriver(new URL("http://localhost:4444/"), new ChromeOptions());
     }
