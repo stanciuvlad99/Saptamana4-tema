@@ -14,7 +14,7 @@ public class WebTabTable extends BaseTest{
 
 
     @Test
-    public static void basicWebPageExample(RemoteWebDriver driver){
+    public static void basicWebPageExample(){
         WebElement basicWebPageExample = driver.findElement(By.id("basicpagetest"));
         basicWebPageExample.click();
         WebElement text = driver.findElement(By.id("para1"));
@@ -23,7 +23,7 @@ public class WebTabTable extends BaseTest{
         System.out.println(text1.getText());
     }
 @Test
-    public static void elementAttributesExamples(RemoteWebDriver driver){
+    public static void elementAttributesExamples(){
         WebElement elementAttributesExamples = driver.findElement(By.id("elementattributestest"));
         elementAttributesExamples.click();
         WebElement button = driver.findElement(By.cssSelector(".styled-click-button"));
@@ -32,7 +32,7 @@ public class WebTabTable extends BaseTest{
         System.out.println(paragraph.getAttribute("nextid"));
     }
 @Test
-    public static void findByPlayground (RemoteWebDriver driver){
+    public static void findByPlayground (){
         WebElement findByPlayground = driver.findElement(By.id("findbytest"));
         findByPlayground.click();
         WebElement first = driver.findElement(By.id("p1"));
@@ -45,7 +45,7 @@ public class WebTabTable extends BaseTest{
 
     }
 @Test
-    public static void tableTestPage (RemoteWebDriver driver){
+    public static void tableTestPage (){
         WebElement tableTestPage = driver.findElement(By.id("tablestest"));
         tableTestPage.click();
 
