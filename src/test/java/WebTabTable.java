@@ -1,20 +1,29 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
-public class WebTabTable extends BaseTest{
+public class WebTabTable {
 
+    public static void main(String[] args) {
+        ChromeDriver driver = ChromeDriverAndPage();
+//        basicWebPageExample(driver);
+//        elementAttributesExamples(driver);
+//        findByPlayground(driver);
+//        tableTestPage(driver);
+        driver.quit();
 
-    @Test
-    public static void basicWebPageExample(RemoteWebDriver driver){
+    }
+
+    public static ChromeDriver ChromeDriverAndPage(){
+        ChromeDriver driver = WebDriverManager.chromeDriver();
+        driver.get("https://testpages.herokuapp.com/styled/index.html");
+        return driver;
+
+    }
+
+    public static void basicWebPageExample(ChromeDriver driver){
         WebElement basicWebPageExample = driver.findElement(By.id("basicpagetest"));
         basicWebPageExample.click();
         WebElement text = driver.findElement(By.id("para1"));
@@ -22,8 +31,8 @@ public class WebTabTable extends BaseTest{
         WebElement text1 = driver.findElement(By.id("para2"));
         System.out.println(text1.getText());
     }
-@Test
-    public static void elementAttributesExamples(RemoteWebDriver driver){
+
+    public static void elementAttributesExamples(ChromeDriver driver){
         WebElement elementAttributesExamples = driver.findElement(By.id("elementattributestest"));
         elementAttributesExamples.click();
         WebElement button = driver.findElement(By.cssSelector(".styled-click-button"));
@@ -31,8 +40,8 @@ public class WebTabTable extends BaseTest{
         WebElement paragraph = driver.findElement(By.id("jsattributes"));
         System.out.println(paragraph.getAttribute("nextid"));
     }
-@Test
-    public static void findByPlayground (RemoteWebDriver driver){
+
+    public static void findByPlayground (ChromeDriver driver){
         WebElement findByPlayground = driver.findElement(By.id("findbytest"));
         findByPlayground.click();
         WebElement first = driver.findElement(By.id("p1"));
@@ -44,8 +53,8 @@ public class WebTabTable extends BaseTest{
 
 
     }
-@Test
-    public static void tableTestPage (RemoteWebDriver driver){
+
+    public static void tableTestPage (ChromeDriver driver){
         WebElement tableTestPage = driver.findElement(By.id("tablestest"));
         tableTestPage.click();
 
@@ -71,6 +80,7 @@ public class WebTabTable extends BaseTest{
         System.out.println("\nHeader din a patra coloana: " + forthRowColumn.get(0).getText());
         System.out.println("Header din a patra coloana: " + forthRowColumn.get(1).getText());
 
+
         WebElement fifthRow = tableRows.get(4);
         List<WebElement> fifthRowColumn = fifthRow.findElements(By.cssSelector("td"));
         System.out.println("\nHeader din a cincea coloana: " + fifthRowColumn.get(0).getText());
@@ -81,6 +91,7 @@ public class WebTabTable extends BaseTest{
 
 
     }
+
 
 
 
